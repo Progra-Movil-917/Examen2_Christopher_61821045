@@ -4,6 +4,6 @@ import 'package:examen2_christopher_61821045/models/book.dart';
 
 Future<List<Book>> getBooks() async {
   final String response = await rootBundle.loadString('assets/data.json');
-  final List<dynamic> data = json.decode(response);
+  final List<dynamic> data = json.decode(response)['data']; // Asegúrate de que esto sea una lista
   return data.map((json) => Book.fromJson(json)).toList();
 }
